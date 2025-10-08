@@ -1,4 +1,4 @@
-# MCP Next.js Demo
+# MCP Next.js
 
 A simple **MCP (Model Context Protocol) server** built with **Next.js** and **TypeScript** and **mcp-handler** that exposes multiple interactive tools via a standardized JSON-RPC API.
 This project demonstrates how to build, expose, and call micro-tools that can be connected to ChatGPT or any LLM supporting MCP.
@@ -9,14 +9,14 @@ This project demonstrates how to build, expose, and call micro-tools that can be
 
 Currently, the server includes the following tools:
 
-1. **Roll Dice** – Roll an N-sided die.  
-2. **Say Hello**  – Returns a greeting message.  
-3. **Add Numbers**  – Adds two numbers.  
-4. **Random Number**  – Generates a random number between a given min and max.  
-5. **Random Quote**  – Returns a motivational quote.  
-6. **Emoji Reaction**  – Responds with a random emoji.  
-7. **Color Palette**  – Generates a random color palette.  
-8. **Horoscope**  – Returns a fun horoscope for a zodiac sign.
+1. **Roll Dice** – Roll an N-sided die.
+2. **Say Hello** – Returns a greeting message.
+3. **Add Numbers** – Adds two numbers.
+4. **Random Number** – Generates a random number between a given min and max.
+5. **Random Quote** – Returns a motivational quote.
+6. **Emoji Reaction** – Responds with a random emoji.
+7. **Color Palette** – Generates a random color palette.
+8. **Horoscope** – Returns a fun horoscope for a zodiac sign.
 
 ---
 
@@ -30,17 +30,29 @@ git clone https://github.com/sattarrasouli/MCP-Next.js.git
 # get to the directory
 cd MCP-Next.js
 ```
+
 ## 2. Install dependencies
+
 ```
 npm install
 ```
+
 ## 3. Run the development server
+
 ```
 npm run dev
 ```
+
 ## The MCP API will be available at:
+
 ```
 http://localhost:3000/api/mcp
+```
+
+## The client ui available at:
+
+```
+http://localhost:3000
 ```
 
 ---
@@ -59,15 +71,17 @@ Use either Postman or curl to send requests.
   "method": "tools/call",
   "params": {
     "name": "tool_name",
-    "arguments": { }
+    "arguments": {}
   }
 }
 ```
 
 ## Example Calls
 
-### Roll Dice 
+### Roll Dice
+
 #### Postman Body:
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -79,7 +93,9 @@ Use either Postman or curl to send requests.
   }
 }
 ```
+
 #### curl:
+
 ```bash
 curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
@@ -92,8 +108,10 @@ curl -X POST http://localhost:3000/api/mcp \
   }'
 ```
 
-### Say Hello 
+### Say Hello
+
 #### Postman Body:
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -107,6 +125,7 @@ curl -X POST http://localhost:3000/api/mcp \
 ```
 
 #### curl:
+
 ```bash
 curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
@@ -119,9 +138,10 @@ curl -X POST http://localhost:3000/api/mcp \
   }'
 ```
 
+### Add Numbers
 
-### Add Numbers 
 #### Postman Body:
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -135,6 +155,7 @@ curl -X POST http://localhost:3000/api/mcp \
 ```
 
 #### curl:
+
 ```bash
 curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
@@ -147,10 +168,10 @@ curl -X POST http://localhost:3000/api/mcp \
   }'
 ```
 
+### Random Number
 
-
-### Random Number 
 #### Postman Body:
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -164,6 +185,7 @@ curl -X POST http://localhost:3000/api/mcp \
 ```
 
 #### curl:
+
 ```bash
 curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
@@ -176,9 +198,10 @@ curl -X POST http://localhost:3000/api/mcp \
   }'
 ```
 
-
 ### Random Quote
+
 #### Postman Body:
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -189,6 +212,7 @@ curl -X POST http://localhost:3000/api/mcp \
 ```
 
 #### curl:
+
 ```bash
 curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
@@ -201,9 +225,10 @@ curl -X POST http://localhost:3000/api/mcp \
   }'
 ```
 
-
 ### Emoji Reaction
+
 #### Postman Body:
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -214,6 +239,7 @@ curl -X POST http://localhost:3000/api/mcp \
 ```
 
 #### curl:
+
 ```bash
 curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
@@ -226,10 +252,10 @@ curl -X POST http://localhost:3000/api/mcp \
   }'
 ```
 
-
-
 ### Color Palette
+
 #### Postman Body:
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -243,6 +269,7 @@ curl -X POST http://localhost:3000/api/mcp \
 ```
 
 #### curl:
+
 ```bash
 curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
@@ -255,11 +282,10 @@ curl -X POST http://localhost:3000/api/mcp \
   }'
 ```
 
-
-
-
 ### Horoscope
+
 #### Postman Body:
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -273,6 +299,7 @@ curl -X POST http://localhost:3000/api/mcp \
 ```
 
 #### curl:
+
 ```bash
 curl -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
@@ -285,17 +312,16 @@ curl -X POST http://localhost:3000/api/mcp \
   }'
 ```
 
-
 ### Example Response
+
 #### For any valid call, the response will look like:
+
 ```json
 {
   "jsonrpc": "2.0",
   "id": "1",
   "result": {
-    "content": [
-      { "type": "text", "text": "🎲 You rolled a 5!" }
-    ]
+    "content": [{ "type": "text", "text": "🎲 You rolled a 5!" }]
   }
 }
 ```

@@ -114,7 +114,7 @@ const handler = createMcpHandler(
       "Returns a fun horoscope for the given zodiac sign",
       { sign: z.string() },
       async ({ sign }) => {
-        const horoscopes = {
+        const horoscopes:Record<string, string> = {
           aries: "Today is a great day for bold moves. Trust your instincts!",
           taurus: "Patience will reward you. Stay steady and enjoy the moment.",
           gemini: "Embrace new conversations and connections.",
